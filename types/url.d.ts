@@ -1,4 +1,4 @@
-export interface URL {
+export interface LinkData {
 	shortURL: string
 	targetURL: string
 	author: string

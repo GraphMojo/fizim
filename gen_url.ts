@@ -18,22 +18,18 @@ function is_exist(shortURL: string): boolean{
 	return false;
 }
 
-export function generateNewURL(): boolean{
-
-	const url = generateNewURL();
-	const template = `{
-		"shortURL": ${url},
-		"targetURL": "",
-		"author": "",
-		"is_retargeting_enabled": false,
-		"ga_ID": ""
-	}`
-
-	try{
-		fs.writeFileSync(`./urls/${url}.json`, template, 'utf-8');
-		return true;
-	}
-	catch(e: any){
-		return false;
-	}
+const url = generateShortURL();
+const template = `{
+	"shortURL": "${url}",
+	"targetURL": "",
+	"owner_github_username": "",
+	"is_retargeting_enabled": false,
+	"ga_ID": ""
+}`;
+try {
+	fs.writeFileSync(`./urls/${url}.json`, template, 'utf-8');
+	console.log(`Succesfully generated urls/${url}.json. Please update with the details`)
+}
+catch (e) {
+	console.error("Failed to create short url. Please try again.")
 }

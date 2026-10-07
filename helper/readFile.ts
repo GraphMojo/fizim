@@ -1,13 +1,13 @@
 import fs from 'fs';
-import type { URL } from '../types/url.d.ts';
+import type { LinkData } from '../types/url.d.ts';
 
 const files = fs.promises;
 
-async function readJSONFile(file: string): Promise<URL|null>{
+export async function readJSONFile(file: string): Promise<LinkData|null>{
 
 	try{
 		const data = await files.readFile(`./urls/${file}.json`, 'utf-8');
-		const jsonData = JSON.parse(data) as URL;
+		const jsonData = JSON.parse(data) as LinkData;
 		return jsonData;
 	}
 	catch(e: any){
