@@ -1,7 +1,7 @@
 import Fastify from "fastify";
-import { readJSONFile } from "./helper/readFile.js";
+import { readJSONFile } from "./helper/readFile.ts";
 import type { LinkData } from "./types/url.js";
-import { notFound, redirectWithRetargetting, serverError } from "./helper/templates.js";
+import { notFound, redirectWithRetargetting, serverError } from "./helper/templates.ts";
 
 const app = Fastify({
 	logger: true

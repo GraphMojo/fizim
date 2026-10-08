@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"build": "tsc",
-	"start": "node dist/index.js",
-	"generate": "node dist/gen_url.js",
+    "build": "tsc && npm run copy-urls",
+	"copy-urls": "node scripts/copyUrls",
+    "start": "node dist/index.js",
+    "generate": "node dist/gen_url.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

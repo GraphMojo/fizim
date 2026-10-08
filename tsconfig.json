@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+	"rootDir": "./src",
     "outDir": "./dist",
     "module": "nodenext",
     "target": "esnext",
     "types": [],
     "sourceMap": false,
-    "declaration": true,
+    "declaration": false,
     "declarationMap": false,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
@@ -15,5 +16,7 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+	"allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   }
 }
